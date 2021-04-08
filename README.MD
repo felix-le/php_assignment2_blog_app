@@ -5,6 +5,11 @@ This project was built by PHP with
 - [bootstrap 4](https://getbootstrap.com/docs/4.0/getting-started/introduction/) by [Felix Le](http://felixle.net/)
 - [Scss - PHP](https://github.com/infostreams/scss-php)
 
+- account: userName, userEmail, password, superAdmin
+
+'super', 'mc.vietanh@gmail.com', '1', true
+'user', 'user@gmail.com', '1', false
+
 ## Available script
 
 In the the project directory, you have to do by steps:
