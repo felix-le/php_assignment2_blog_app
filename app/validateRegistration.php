@@ -9,7 +9,6 @@
     $data = htmlspecialchars($data);
     return $data;
   }
-  $con  = config::connect();
 
   $username = validate($_POST['username']);
   $email = validate($_POST['email']);
@@ -48,10 +47,8 @@
     $php_a2_users = $cmd->fetchAll();
     
     foreach ($php_a2_users as $v){
-      echo $v[$col] ;
-
       if($v[$col] == $data){
-        echo 'trung roi ';
+        header("Location: register.php?error=$data has been registered&$data");
         exit();
       }
     }
@@ -60,27 +57,22 @@
 
     $query = $con -> prepare("
     INSERT INTO php_a2_users(username, email, password, isSuperAdmin) VALUEs(:username, :email, :password, :isSuperAdmin)
-  ");
-  $con -> beginTransaction();
-  $query ->bindParam(':username', $username);
-  $query ->bindParam(':email', $email);
-  $query ->bindParam(':password', $password);
-  $query ->bindParam(':isSuperAdmin', $isSuperAdmin);
+    ");
+    $query ->bindParam(':username', $username);
+    $query ->bindParam(':email', $email);
+    $query ->bindParam(':password', $password);
+    $query ->bindParam(':isSuperAdmin', $isSuperAdmin);
 
-  $query ->execute();
+    $query ->execute();
 
-};
-checkDoubleData('username', $username);
+  };
+  checkDoubleData('username', $username);
+  checkDoubleData('email', $email);
 
+  $con  = config::connect();
 
-
-
-
-  
-  // If all of the fieldset are correct
-
-  // if(insertDetails($con, $username, $email, $password, $isSuperAdmin,$ok));
-  // {
-  //   echo "Your account has been created successfully";
-  // };
+  if(insertDetails($con, $username, $email, $password, $isSuperAdmin,$ok));
+  {
+    echo "Your account has been created successfully";
+  };
 ?>
