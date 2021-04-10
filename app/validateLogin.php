@@ -39,10 +39,11 @@
         $_SESSION['isSuperAdmin'] = $v['isSuperAdmin'];
         header('Location: index.php');
         exit();
-      } else{
-        header("Location: login.php?error=Email or password is incorrect");
-        exit(); 
-      }
+      } 
+    };
+    {
+      header("Location: login.php?error=Email or password is incorrect");
+      exit(); 
     }
   }
 
