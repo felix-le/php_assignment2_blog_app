@@ -1,7 +1,6 @@
 <?php 
   $title = 'Register page';
   include './includes/header.php';
-  include_once ("config.php");
   // validate data from server side
 	function validate($data){
     $data = trim($data);
@@ -53,27 +52,28 @@
       }
     }
   }
-  function insertDetails($con, $username, $email, $password, $isSuperAdmin){
+  function insertDetails($username, $email, $password, $isSuperAdmin){
 
-    $query = $con -> prepare("
+    include ("config.php");
+    $sql = "
     INSERT INTO php_a2_users(username, email, password, isSuperAdmin) VALUEs(:username, :email, :password, :isSuperAdmin)
-    ");
-    $password = password_hash($password, PASSWORD_DEFAULT);
+    ";
+    // $password = password_hash($password, PASSWORD_DEFAULT);
+    $cmd = $db -> prepare($sql);
 
-    $query ->bindParam(':username', $username);
-    $query ->bindParam(':email', $email);
-    $query ->bindParam(':password', $password);
-    $query ->bindParam(':isSuperAdmin', $isSuperAdmin);
+    $cmd ->bindParam(':username', $username, PDO::PARAM_STR, 320);
+    $cmd ->bindParam(':email', $email, PDO::PARAM_STR, 320);
+    $cmd ->bindParam(':password', $password,PDO::PARAM_STR, 255);
+    $cmd ->bindParam(':isSuperAdmin', $isSuperAdmin);
 
-    $query ->execute();
-
+    $cmd ->execute();
+    $db = null;
   };
   if($ok){
     checkDoubleData('username', $username);
     checkDoubleData('email', $email);
-    $con  = config::connect();
     
-    if(insertDetails($con, $username, $email, $password, $isSuperAdmin,$ok));
+    if(insertDetails($username, $email, $password, $isSuperAdmin));
     {
       header("Location: login.php?info= Your account has been created");
       exit();

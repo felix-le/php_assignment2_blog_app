@@ -12,7 +12,7 @@
     <?php } ?>
     <form method="post" action="validateLogin.php" >
         <fieldset class="form-group">
-            <label for="email" class="col-2">Username:</label>
+            <label for="email" class="col-2">Email:</label>
             <input name="email" id="email" required type="email" placeholder="email@email.com" />
         </fieldset>
         <fieldset class="form-group">
@@ -21,6 +21,9 @@
         </fieldset>
         <div class="offset-3">
             <button class="btn btn-primary">Login</button>
+        </div>
+        <div class="offset-3">
+            <a class="btn btn-info" href='register.php'>Register</a>
         </div>
     </form>
 </main>
