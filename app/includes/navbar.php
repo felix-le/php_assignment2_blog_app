@@ -16,7 +16,7 @@
 					<li class="nav-item">
 						<a class="nav-link <?php if($page == 'Contact'){echo 'active';} ?>" href="contact.php">Contact</a>
 					</li>
-					<li class="nav-item"><a href="logout.php">Logout</a></li>
+					<li class="nav-link"><a href="logout.php">Logout</a></li>
 				</ul>
 			</div>
 		</div>
