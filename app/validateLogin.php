@@ -33,11 +33,14 @@
     
     foreach ($php_a2_users as $v){
       if($v['email'] == $email && $v['password'] == $password){
-        echo 'ok email && password';
+        session_start();
+        $_SESSION['email'] = $email;
+        $_SESSION['username'] = $v['username'];
+        header('Location: index.php');
         exit();
       } else{
         header("Location: login.php?error=Email or password is incorrect");
-        exit();
+        exit(); 
       }
     }
   }
