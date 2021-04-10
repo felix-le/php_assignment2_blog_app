@@ -15,7 +15,7 @@
   $password = validate($_POST['password']);
   $confirm = validate($_POST['confirm']);
   $isSuperAdmin = isset($_POST['isSuperAdmin']) ? $_POST['isSuperAdmin'] : 0 ;
-
+  $ok = true;
 
   if(empty($username)){
     header("Location: register.php?error=Username is required&$username");
@@ -39,7 +39,7 @@
     exit();
   }
 
-  function checkDoubleData($col, $data){
+  function checkDoubleData($col, $data ){
     $db = new PDO('mysql:host=172.31.22.43;dbname=Anh200443551', 'Anh200443551', 'C_grD6XN8q');
     $sql = "SELECT * FROM php_a2_users";
     $cmd = $db->prepare($sql);
@@ -58,6 +58,8 @@
     $query = $con -> prepare("
     INSERT INTO php_a2_users(username, email, password, isSuperAdmin) VALUEs(:username, :email, :password, :isSuperAdmin)
     ");
+    $password = password_hash($password, PASSWORD_DEFAULT);
+
     $query ->bindParam(':username', $username);
     $query ->bindParam(':email', $email);
     $query ->bindParam(':password', $password);
@@ -66,13 +68,15 @@
     $query ->execute();
 
   };
-  checkDoubleData('username', $username);
-  checkDoubleData('email', $email);
-
-  $con  = config::connect();
-
-  if(insertDetails($con, $username, $email, $password, $isSuperAdmin,$ok));
-  {
-    echo "Your account has been created successfully";
-  };
+  if($ok){
+    checkDoubleData('username', $username);
+    checkDoubleData('email', $email);
+    $con  = config::connect();
+    
+    if(insertDetails($con, $username, $email, $password, $isSuperAdmin,$ok));
+    {
+      header("Location: login.php?info= Your account has been created");
+      exit();
+    };
+  }
 ?>

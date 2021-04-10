@@ -6,8 +6,8 @@
 <main class="container">
     <h1>User Registration</h1>
 		<?php if (isset($_GET['error'])) { ?>
-          <p class="error"><?php echo $_GET['error']; ?></p>
-        <?php } ?>
+      <p class="error"><?php echo $_GET['error']; ?></p>
+    <?php } ?>
     <form method="post" action="validateRegistration.php" novalidate>
         <fieldset class="form-group">
                 <label for="username" class="col-2">Username:</label>
