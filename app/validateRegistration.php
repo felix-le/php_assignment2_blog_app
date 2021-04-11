@@ -56,9 +56,9 @@
 
     include ("config.php");
     $sql = "
-    INSERT INTO php_a2_users(username, email, password, isSuperAdmin) VALUEs(:username, :email, :password, :isSuperAdmin)
+    INSERT INTO php_a2_users(username, email, password, isSuperAdmin) VALUES(:username, :email, :password, :isSuperAdmin)
     ";
-    // $password = password_hash($password, PASSWORD_DEFAULT);
+    $password = password_hash($password, PASSWORD_DEFAULT);
     $cmd = $db -> prepare($sql);
 
     $cmd ->bindParam(':username', $username, PDO::PARAM_STR, 320);

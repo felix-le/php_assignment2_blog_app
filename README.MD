@@ -59,18 +59,25 @@ In the the project directory, you have to do by steps:
 - Show all pages (users)
 - 404 error
 - general error (database error)
+
 - Home
 - About
 - Services
 - Contact
 
+\*Bug:
+
+- Cannot hash password in validateRegister.php
+
 ### Tasks:
 
-1. Setting for using SCSS in PHP project.
-2. create Login pages, a public page, a private page.
+1. Setting for using SCSS in PHP project. - done
+2. create Login pages, a public page, a private page. - done
+3. Authentication: Super admin (control users + pages), admin (control pages); - done
 
-- Create Databases
+- Create admin + super admin - done
 
-* Admin tables (super admin = boolean, email, password, username, avatar)
-* page tables
-* profile tables
+4. 404 page
+5. Upload logo image
+6. create profile page + upload avatar, edit name, change password.
+7.

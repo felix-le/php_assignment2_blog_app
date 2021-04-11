@@ -32,7 +32,8 @@
     $php_a2_users = $cmd->fetchAll();
     
     foreach ($php_a2_users as $v){
-      if($v['email'] == $email && $v['password'] == $password){
+
+      if($v['email'] == $email && password_verify($password, $v['password']) ){
         session_start();
         $_SESSION['email'] = $email;
         $_SESSION['username'] = $v['username'];
