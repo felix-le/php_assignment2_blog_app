@@ -25,27 +25,34 @@
   }
 
   function checkData( $email, $password){
-    $db = new PDO('mysql:host=172.31.22.43;dbname=Anh200443551', 'Anh200443551', 'C_grD6XN8q');
-    $sql = "SELECT * FROM php_a2_users";
-    $cmd = $db->prepare($sql);
-    $cmd->execute();
-    $php_a2_users = $cmd->fetchAll();
-    
-    foreach ($php_a2_users as $v){
+    try{
+      $db = new PDO('mysql:host=172.31.22.43;dbname=Anh200443551', 'Anh200443551', 'C_grD6XN8q');
+        $sql = "SELECT * FROM php_a2_users";
+        $cmd = $db->prepare($sql);
+        $cmd->execute();
+        $php_a2_users = $cmd->fetchAll();
+        
+        foreach ($php_a2_users as $v){
 
-      if($v['email'] == $email && password_verify($password, $v['password']) ){
-        session_start();
-        $_SESSION['email'] = $email;
-        $_SESSION['username'] = $v['username'];
-        $_SESSION['isSuperAdmin'] = $v['isSuperAdmin'];
-        header('Location: index.php');
-        exit();
-      } 
-    };
-    {
-      header("Location: login.php?error=Email or password is incorrect");
-      exit(); 
+          if($v['email'] == $email && password_verify($password, $v['password']) ){
+            session_start();
+            $_SESSION['email'] = $email;
+            $_SESSION['username'] = $v['username'];
+            $_SESSION['isSuperAdmin'] = $v['isSuperAdmin'];
+            header('Location: index.php');
+            exit();
+          } 
+        };
+        {
+          header("Location: login.php?error=Email or password is incorrect");
+          exit(); 
+        }
+    } catch(PDOException $e){
+      // echo "Connection failed" . $e -> getMessage();
+      header('Location: error.php');
+      exit();
     }
+    
   }
 
   if($ok){

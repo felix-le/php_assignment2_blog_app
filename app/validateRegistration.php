@@ -72,11 +72,17 @@
   if($ok){
     checkDoubleData('username', $username);
     checkDoubleData('email', $email);
-    
-    if(insertDetails($username, $email, $password, $isSuperAdmin));
-    {
-      header("Location: login.php?info= Your account has been created");
+    try{
+      if(insertDetails($username, $email, $password, $isSuperAdmin));
+      {
+        header("Location: login.php?info= Your account has been created");
+        exit();
+      };
+    } catch(PDOException $e){
+      // echo "Connection failed" . $e -> getMessage();
+      header('Location: error.php');
       exit();
-    };
+    }
+   
   }
 ?>
