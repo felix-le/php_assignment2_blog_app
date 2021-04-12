@@ -1,2 +1,3 @@
 RewriteEngine On
 RewriteRule ^(.*)\.scss$ scss.php?file=$1.scss [L,QSA]
+ErrorDocument 404 http://15.222.122.223/~Anh200443551/phpClass/php_assignment2_blog_app/app/404.php
