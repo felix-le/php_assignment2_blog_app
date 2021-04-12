@@ -3,6 +3,7 @@
   include './includes/header.php';
 ?>
 <!-- pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"  -->
+<?php include 'includes/navbar.php'; ?>
 <main class="container">
     <h1>User Registration</h1>
 		<?php if (isset($_GET['error'])) { ?>

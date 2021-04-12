@@ -2,6 +2,7 @@
   $title = 'Please Login';
   include './includes/header.php';
 ?>
+  <?php include 'includes/navbar.php'; ?>
 <main class="container">
     <h1>Login</h1>
     <?php if (isset($_GET['info'])) { ?>
@@ -10,6 +11,7 @@
     <?php if (isset($_GET['error'])) { ?>
       <p class="error"><?php echo $_GET['error']; ?></p>
     <?php } ?>
+    
     <form method="post" action="validateLogin.php" >
         <fieldset class="form-group">
             <label for="email" class="col-2">Email:</label>

@@ -5,12 +5,13 @@
   include './includes/header.php';
   if($_SESSION['isSuperAdmin'] == 1){
 ?>
-
+  <?php include 'includes/navbar.php'; ?>
+  <main>
   <h1>this is all pages that only show if you logged in as a super admin</h1>
   <?php include 'includes/footer.php'; ?>
   <?php include 'includes/scripts.php'; ?>
 
-  
+  </main>
 </body>
 </html>
 <?php 

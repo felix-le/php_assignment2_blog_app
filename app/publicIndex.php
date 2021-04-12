@@ -1,12 +1,14 @@
 <?php 
-  // Auth check
-  $title = 'Contact';
+  $title = 'Home';
   include './includes/header.php';
 ?>
-  <?php include 'includes/navbar.php'; ?>
+<main>
+<?php include 'includes/navbar.php'; ?>
   <main>
-  <h1>this is  Contact page</h1>
-  
+  <h1>This is public Index</h1>
+
+  <?php include 'includes/navbar.php'; ?>
+</main>
   <?php include 'includes/footer.php'; ?>
   <?php include 'includes/scripts.php'; ?>
   </main>
