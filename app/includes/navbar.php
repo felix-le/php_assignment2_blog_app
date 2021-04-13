@@ -21,42 +21,79 @@
 					<li class="nav-item">
 						<a class="nav-link <?php if($page == 'Home'){echo 'active';} ?>" href="index.php">Home</a>
 					</li>
-					<li class="nav-item">
-						<a class="nav-link <?php if($page == 'About'){echo 'active';} ?>" href="about.php">About</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link <?php if($page == 'Services'){echo 'active';} ?>" href="services.php">Services</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link <?php if($page == 'Contact'){echo 'active';} ?>" href="contact.php">Contact</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link <?php if($page == 'Login'){echo 'active';} ?>" href="login.php">Login</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link <?php if($page == 'Login'){echo 'active';} ?>" href="register.php">Register</a>
-					</li>
+					<?php 
+
+					try{
+						include ("config.php");
+						$sql = "
+						SELECT * FROM php_a2_pages;
+						";
+						$cmd = $db -> prepare($sql);
+						$cmd ->execute();
+						// set table variable
+
+						$pageData =  $cmd->fetchAll(); 
+
+
+						foreach ($pageData as $v){
+							echo '<li class="nav-item">';
+							echo '<a class="nav-link' ;
+							echo  $page == $v['page_name'] ? 'active" ':'"';
+							echo  'href="'.$v['page_name'] . '.php'    . '">';
+							echo  $v['page_name'];
+							echo '</a>';
+							echo '	</li>';
+						}
+						$db = null;
+					}catch(PDOException $e){
+							// echo "Connection failed" . $e -> getMessage();
+							header('Location: error.php');
+							exit();
+						}
+					?>
+					<li class="nav-item"><a class="nav-link" href="login.php">Login</a></li>
 					<?php
 					} else{ ?>
 					<li class="nav-item">
 						<a class="nav-link <?php if($page == 'Home'){echo 'active';} ?>" href="index.php">Home</a>
 					</li>
-					<li class="nav-item">
-						<a class="nav-link <?php if($page == 'About'){echo 'active';} ?>" href="about.php">About</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link <?php if($page == 'Services'){echo 'active';} ?>" href="services.php">Services</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link <?php if($page == 'Contact'){echo 'active';} ?>" href="contact.php">Contact</a>
-					</li>
+					<?php 
+
+					try{
+						include ("config.php");
+						$sql = "
+						SELECT * FROM php_a2_pages;
+						";
+						$cmd = $db -> prepare($sql);
+						$cmd ->execute();
+						// set table variable
+
+						$pageData =  $cmd->fetchAll(); 
+
+
+						foreach ($pageData as $v){
+							echo '<li class="nav-item">';
+							echo '<a class="nav-link' ;
+							echo  $page == $v['page_name'] ? 'active" ':'"';
+							echo  'href="'.$v['page_name'] . '.php'    . '">';
+							echo  $v['page_name'];
+							echo '</a>';
+							echo '	</li>';
+						}
+						$db = null;
+					}catch(PDOException $e){
+							// echo "Connection failed" . $e -> getMessage();
+							header('Location: error.php');
+							exit();
+						}
+					?>
 					<li class="nav-item">
 						<a class="nav-link <?php if($page == 'profile'){echo 'active';} ?>" href="profile.php"><?php
 							echo $_SESSION['username'];
 						?></a>
 					</li>
 
-					<li class="nav-link"><a href="logout.php" class="text-white">Logout</a></li>
+					<li class="nav-item"><a href="logout.php" class="text-white nav-link" >Logout</a></li>
 
 					<?php }?>
 				</ul>

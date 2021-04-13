@@ -79,7 +79,7 @@
     header('Location: error.php');
     exit();
   }
-  // style="display: none; height:0px;"
+  // 
 ?>
     </div>
     <!-- DELETE Page Modal -->
@@ -94,7 +94,7 @@
       </div>
       <form action="process_delete_page.php" method="POST">
         <div class="modal-body">
-          <input type="text" name="pageId_show" id="pageId_show" />
+          <input type="hidden" name="pageId_show" id="pageId_show" style="display: none; height:0px;" />
           <h4>Please confirm to delete page </h4>
         </div>
         <div class="modal-footer">
