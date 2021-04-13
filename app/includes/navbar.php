@@ -1,15 +1,20 @@
 <!--- Navigation -->
-<nav class="navbar navbar-dark bg-dark navbar-expand-md fixed-top" style='min-height: 60px'>
-		<div class="container-fluid">
-			<a class="navbar-brand" href="index.php"><img src="img/bootstrap.png"></a> <button class="navbar-toggler" data-target="#navbarResponsive" data-toggle="collapse" type="button"><span class="navbar-toggler-icon"></span></button>
-			<div class="collapse navbar-collapse" id="navbarResponsive">
-				<ul class="navbar-nav ml-auto">
-				<?php 
+<?php 
   				// Call session start if it hasn't been called already at the first time
 					if(session_status() == PHP_SESSION_NONE){
 						session_start();
 					};
 				?>
+<nav class="navbar navbar-dark bg-dark navbar-expand-md fixed-top" style='min-height: 60px'>
+		<div class="container-fluid">
+			<a class="navbar-brand" href="index.php">
+			
+			<img src="img/bootstrap.png">
+
+			</a> <button class="navbar-toggler" data-target="#navbarResponsive" data-toggle="collapse" type="button"><span class="navbar-toggler-icon"></span></button>
+			<div class="collapse navbar-collapse" id="navbarResponsive">
+				<ul class="navbar-nav ml-auto">
+		
 				<?php
 					if(empty($_SESSION['username'])){
 				?>

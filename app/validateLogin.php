@@ -39,6 +39,7 @@
             $_SESSION['email'] = $email;
             $_SESSION['username'] = $v['username'];
             $_SESSION['isSuperAdmin'] = $v['isSuperAdmin'];
+            $_SESSION['id'] = session_id();
             header('Location: index.php');
             exit();
           } 

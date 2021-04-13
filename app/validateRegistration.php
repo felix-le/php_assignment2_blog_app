@@ -83,6 +83,5 @@
       header('Location: error.php');
       exit();
     }
-   
   }
 ?>
