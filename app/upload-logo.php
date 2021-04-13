@@ -5,7 +5,8 @@
 ?>
 <?php include 'includes/navbar.php'; ?>
 <main>
-  <h1>this is an upload page</h1>
+  <div class="container ">
+  <div class="p-5"></div>
   <?php if (isset($_GET['info'])) { ?>
   <p class="text-info"><?php echo $_GET['info']; ?></p>
   <?php } ?>
@@ -25,6 +26,7 @@
     </div>
     <button class="btn btn-secondary">Upload Now</button>
   </form>
+  </div>
   <?php include 'includes/footer.php'; ?>
   <?php include 'includes/scripts.php'; ?>
 </main>

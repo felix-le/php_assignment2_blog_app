@@ -9,7 +9,7 @@
 		<div class="container-fluid">
 			<a class="navbar-brand" href="index.php">
 					<img style="max-width: 50px; max-height: 50px;" 
-						src="uploads/img/<?php echo $_SESSION['logo_file_name'] === null ? 'bootstrap.png': $_SESSION['logo_file_name']; ?>"  
+						src="uploads/img/<?php echo $_SESSION['logo_file_name'] === null ? 'mrRich.jpeg': $_SESSION['logo_file_name']; ?>"  
 					/>
 			</a> <button class="navbar-toggler" data-target="#navbarResponsive" data-toggle="collapse" type="button"><span class="navbar-toggler-icon"></span></button>
 			<div class="collapse navbar-collapse" id="navbarResponsive">

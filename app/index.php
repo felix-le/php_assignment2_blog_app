@@ -27,6 +27,14 @@
                 <li class="list-item mt-5"><a href="upload-logo.php"> Upload Logo Site</a> <p class="text-info small">Add / Remove / Edit - All Pages</p></li>
               </ul>
             </div>
+            <div class="container">
+      <div class="element-center">
+        <h1>Hello World!</h1>
+        <p class="text-info"> Welcome My Blog! Just Check It Out</p>
+        <div class="img_index mt-5">
+          <img src="img/heart.jpeg" with="100%" height="100%"/>
+        </div>
+      </div>
 					<?php }?>
 </main>
   <?php include 'includes/footer.php'; ?>

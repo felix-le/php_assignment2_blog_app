@@ -6,9 +6,8 @@ This project was built by PHP with
 - [Scss - PHP](https://github.com/infostreams/scss-php)
 
 - account: userName, userEmail, password, superAdmin
-
-'super', 'mc.vietanh@gmail.com', '1', true
-'user', 'user@gmail.com', '1', false
+  email superadmin@gmail.com
+  pass 1
 
 ## Available script
 
@@ -82,17 +81,17 @@ In the the project directory, you have to do by steps:
 
 5. all pages - page (add/remove/edit page) /
 
-- show modal before removing
-- edit content box
-- edit page by sub-links (index.php?id=1)
+- show modal before removing - done
+- edit content box - nope
+- edit page by sub-links (index.php?id=1) - nope
 
 8. All administrators (super admin) (add/remove/edit addmin)
 
-- edit user's profile
+- edit user's profile - nope
 
 - List registered users of the admin site
 - Edit a new admin user
 - Delete an admin user, preceded by a confirmation message
 
-6. Upload logo image
-7. create profile page + upload avatar, edit name, change password.
+6. Upload logo image - done
+7. create profile page + upload avatar, edit name, change password.- nope
