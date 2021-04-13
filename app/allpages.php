@@ -28,7 +28,7 @@
     
     echo '
     <h1>User Table Information</h1>
-    <a href="register.php">Add new user</a>
+    <a href="newpage.php">Add a new page</a>
 
     <table class="table table-dark table-hover"> 
     <thead>
