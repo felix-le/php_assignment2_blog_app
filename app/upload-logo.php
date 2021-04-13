@@ -7,12 +7,12 @@
 <main>
   <h1>this is an upload page</h1>
   <?php if (isset($_GET['info'])) { ?>
-  <p class="info"><?php echo $_GET['info']; ?></p>
+  <p class="text-info"><?php echo $_GET['info']; ?></p>
   <?php } ?>
   <?php if (isset($_GET['error'])) { ?>
   <p class="error"><?php echo $_GET['error']; ?></p>
   <?php } ?>
-  <p class="info">Please upload a file that its size smaller than 10Mb (10 048 576 Byte)</p>
+  <p class="text-info">Please upload a file that its size smaller than 10Mb (10 048 576 Byte)</p>
   <form method="post" action="process-upload-img.php" enctype="multipart/form-data">
     <div class="form-group">
       <label for="myFile">Input Logo</label>

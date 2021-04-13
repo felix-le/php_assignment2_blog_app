@@ -77,12 +77,10 @@ In the the project directory, you have to do by steps:
 
 - Create admin + super admin - done
 
-4. 404 page
-   4.1 error pages
+4. 404 page - done
+   4.1 error pages - done
 
-5. Upload logo image
-6. create profile page + upload avatar, edit name, change password.
-7. all pages - page (add/remove/edit page) /
+5. all pages - page (add/remove/edit page) /
 
 - show modal before removing
 - edit content box
@@ -91,3 +89,10 @@ In the the project directory, you have to do by steps:
 8. All administrators (super admin) (add/remove/edit addmin)
 
 - edit user's profile
+
+- List registered users of the admin site
+- Edit a new admin user
+- Delete an admin user, preceded by a confirmation message
+
+6. Upload logo image
+7. create profile page + upload avatar, edit name, change password.

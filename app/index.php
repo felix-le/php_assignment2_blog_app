@@ -16,11 +16,17 @@
             exit();
 					} else{ ?>
 					<main>
-            <h1>Hello World!</h1>
             <?php if (isset($_GET['error'])) { ?>
                 <p class="error"><?php echo $_GET['error']; ?></p>
               <?php } ?>
             <?php include 'includes/navbar.php'; ?>
+            <div class="container">
+              <ul class="no-bullet p-3">
+                <li class="list-item mt-3"><a href="allpages.php">All Pages</a> <p class="text-info small">Add / Remove / Edit - All Pages</p></li>
+                <li class="list-item mt-5"><a href="allusers.php">All Users</a> <p class="text-info small">Add / Remove / Edit - Only Super Admin (superadmin@gmail.com - pass 1) </p></li>
+                <li class="list-item mt-5"><a href="upload-logo.php"> Upload Logo Site</a> <p class="text-info small">Add / Remove / Edit - All Pages</p></li>
+              </ul>
+            </div>
 					<?php }?>
 </main>
   <?php include 'includes/footer.php'; ?>

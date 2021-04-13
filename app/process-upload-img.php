@@ -5,7 +5,9 @@
   };
   if($_FILES['myFile']['name'] != null){
     $name = $_FILES['myFile']['name'];
-    $name =  "LOGO-" . session_id() . "-" . $name;
+    $name =  trim("LOGO-" . session_id() . "-" . $name);
+    session_start();
+    $_SESSION['logo_file_name'] = $name;
     $img_alt = $_POST['alt'];
     
     $size = $_FILES['myFile']['size'];

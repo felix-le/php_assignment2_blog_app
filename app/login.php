@@ -6,7 +6,7 @@
 <main class="container">
     <h1>Login</h1>
     <?php if (isset($_GET['info'])) { ?>
-      <p class="info"><?php echo $_GET['info']; ?></p>
+      <p class="text-info"><?php echo $_GET['info']; ?></p>
     <?php } ?>
     <?php if (isset($_GET['error'])) { ?>
       <p class="error"><?php echo $_GET['error']; ?></p>
@@ -15,10 +15,10 @@
     <form method="post" action="validateLogin.php" >
         <fieldset class="form-group">
             <label for="email" class="col-2">Email:</label>
-            <input name="email" id="email" required type="email" placeholder="email@email.com" />
+            <input name="email" id="email" required type="email" placeholder="superadmin@gmail.com" />
         </fieldset>
         <fieldset class="form-group">
-            <label for="password" class="col-2">Password:</label>
+            <label for="password" class="col-2">Password: 1</label>
             <input type="password" name="password" id="password" required />
         </fieldset>
         <div class="offset-3">
